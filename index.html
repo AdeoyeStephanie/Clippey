@@ -12,7 +12,7 @@
     
 </head>
 <body>
-   <script src="popup.js"></script> <!--Link popup.js to the main HTML file-->
+   
    <div class="main-container">
     <div class="white-container">
         <h1 class="title">Clippey</h1>
@@ -21,7 +21,7 @@
             <img src="assets/Clippey-logo.svg" alt="Clippey-logo">
         </div>
         <div class="paste-board">
-            <p class="paste-board-text"> Add or paste text here...</p>
+            <textarea class="paste-board" id="clipText" placeholder="Add or paste text here..."></textarea>
         </div>
         <div class="action-buttons">
              <button class="save-text">Save Text</button>
@@ -30,5 +30,6 @@
        
     </div> <!--Closing of white container-->
    </div> <!--Closing of main container-->
+<script src="popup.js"></script> <!--Link popup.js to the main HTML file-->
 </body>
 </html>
