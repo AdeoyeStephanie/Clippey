@@ -1,9 +1,9 @@
 //testing to see if the popup.js is working
-console.log("popup.js is connected!");
+/*console.log("popup.js is connected!");
 
 document.addEventListener("DOMContentLoaded", () => {
 alert("Clippey is working!");
-});
+}); */
 
 // Wait for the page to fully load before running code
 document.addEventListener('DOMContentLoaded', function() {

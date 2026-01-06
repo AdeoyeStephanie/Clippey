@@ -1,11 +1,18 @@
 /*CSS Styling*/
+body {
+    margin: 0;
+    padding: 0;
+    width: 417px;
+    height: 548px;
+    overflow: hidden;
+}
 .main-container{
     display: flex;
     background-color: rgb(252, 236, 236);
     width: 417px;
     height: 548px;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    left: 30%;
 }
 .white-container{
     display: flex;
