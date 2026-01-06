@@ -58,6 +58,10 @@
     display: flex;
     width: 311px;
     height: 134px;
+    font-family: 'Chilanka', cursive;
+    padding: 10px;
+    resize: none; /* prevents user from resizing */
+    font-size: 1em;
     border-color: black;
     border-radius: 5px;
     border-style: solid;
