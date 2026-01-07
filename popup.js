@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check if there's actually text so we don't save a blank page
         if (textToSave.trim() === '') {
-            alert('Please enter text before saving :)');
-            return; // 
+            alert('Please enter text first :)');
+            return; 
         }
         
         // Getting existing saved clips from Chrome storage
-        // chrome.storage.sync works across devices if user is signed in
+        // chrome.storage.local for more storage
         chrome.storage.local.get(['clips'], function(result) {
             // If there are no saved clips yet, start with an empty array
             let clips = result.clips || [];
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // User views saved text
+    // Viewing saved text
     viewButton.addEventListener('click', function() {
         // Get all saved clips from storage
         chrome.storage.local.get(['clips'], function(result) {
@@ -107,7 +107,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Copy to clipboard using the Clipboard API
                     navigator.clipboard.writeText(clipText).then(function() {
-                        alert('Copied to clipboard! ✨');
+                        // copy success message
+                        const tempMsg = document.createElement('div');
+                        tempMsg.textContent = '✨ Copied!';
+                        tempMsg.style.cssText = 'position: fixed; top: 10px; right: 10px; background: #fc9493ff; color: white; padding: 8px 15px; border-radius: 5px; font-family: Chilanka, cursive; font-size: 0.85em; z-index: 9999;';
+                        document.body.appendChild(tempMsg);
+                        setTimeout(() => tempMsg.remove(), 1500);
                     });
                 });
             });
