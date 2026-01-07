@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Getting existing saved clips from Chrome storage
         // chrome.storage.sync works across devices if user is signed in
-        chrome.storage.sync.get(['clips'], function(result) {
+        chrome.storage.local.get(['clips'], function(result) {
             // If there are no saved clips yet, start with an empty array
             let clips = result.clips || [];
             
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // User views saved text
     viewButton.addEventListener('click', function() {
         // Get all saved clips from storage
-        chrome.storage.sync.get(['clips'], function(result) {
+        chrome.storage.local.get(['clips'], function(result) {
             const clips = result.clips || [];
             
             // If no clips saved yet
