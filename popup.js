@@ -40,9 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     timestamp: new Date().toLocaleString()
                 });
 
-                // Keep only the last 20 clips 
-                if (clips.length > 25) {
-                    clips = clips.slice(0, 25);
+                // Manage total number of clips
+                if (clips.length > 100) {
+                    clips = clips.slice(0, 100);
+                    alert(" Storage is full. Please delete some old clips")
                 }
 
                 // Saving the updated clips array back to storage
