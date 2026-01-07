@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Build HTML for the clips view
             let clipsHTML = `
                 <div style="padding: 20px; width: 100%; overflow-y: auto;">
-                    <h2 style="font-family: 'Chilanka', cursive; text-align: center;">Your Saved Clips</h2>
-                    <button id="backButton" style="margin-bottom: 15px; padding: 8px 15px; font-family: 'Chilanka', cursive; background-color: rgb(255, 247, 247); border-radius: 10px; border: 1px solid #ccc; cursor: pointer;">← Back</button>
-                    <button id="clearAll" style="margin-bottom: 15px; margin-left: 10px; padding: 8px 15px; font-family: 'Chilanka', cursive; background-color: #ffcccb; border-radius: 10px; border: 1px solid #ccc; cursor: pointer;">Clear All</button>
+                    <h2 style="font-family: 'Montserrat; text-align: center;">Your Saved Clips</h2>
+                    <button id="backButton" style="margin-bottom: 15px; padding: 8px 15px; font-family: 'Montserrat'; background-color: rgb(255, 247, 247); border-radius: 10px; border: 1px solid #ccc; cursor: pointer;">← Back</button>
+                    <button id="clearAll" style="margin-bottom: 15px; margin-left: 10px; padding: 8px 15px; font-family: 'Montserrat'; background-color: #ffcccb; border-radius: 10px; border: 1px solid #ccc; cursor: pointer;">Clear All</button>
                     <div id="clipsList">
             `;
             
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         border-radius: 8px;
                         border: 1px solid #ddd;
                         cursor: pointer;
-                        font-family: 'Chilanka', cursive;
+                        font-family: 'Montserrat';
                     ">
                         <div style="font-size: 0.75em; color: #666; margin-bottom: 5px;">${clip.timestamp}</div>
                         <div style="word-wrap: break-word;">${clip.text.substring(0, 100)}${clip.text.length > 100 ? '...' : ''}</div>
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 location.reload();
             });
             
-            // STEP 9: Clear all clips button
+            // Clear all clips button
             document.getElementById('clearAll').addEventListener('click', function() {
                 if (confirm('Are you sure you want to delete all saved clips?')) {
                     chrome.storage.local.set({ clips: [] }, function() {
