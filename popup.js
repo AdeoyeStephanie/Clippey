@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Keep only the last 20 clips 
-            if (clips.length > 20) {
-                clips = clips.slice(0, 20);
+            if (clips.length > 25) {
+                clips = clips.slice(0, 25);
             }
             
             // Saving the updated clips array back to storage
             chrome.storage.local.set({ clips: clips }, function() {
-                alert('Text saved! 📋');
+                showNotification('Text saved! 📋');
                 textArea.value = ''; //clear text box
             });
         });
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // If no clips saved yet
             if (clips.length === 0) {
-                alert('No saved clips yet! Save some text first.');
+                showNotification('No saved clips yet! Save some text first.', 3000);
                 return;
             }
             
@@ -93,7 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             });
             
-            clipsHTML += '</div></div>';
+            clipsHTML += `
+                    </div>
+                    <div id="clipNotification" class="notification"></div>
+                </div>
+            `;
             
             // Replace the current content with clips view
             whiteContainer.innerHTML = clipsHTML;
@@ -108,11 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Copy to clipboard using the Clipboard API
                     navigator.clipboard.writeText(clipText).then(function() {
                         // copy success message
-                        const tempMsg = document.createElement('div');
-                        tempMsg.textContent = '✨ Copied!';
-                        tempMsg.style.cssText = 'position: fixed; top: 10px; right: 10px; background: #fc9493ff; color: white; padding: 8px 15px; border-radius: 5px; font-family: Chilanka, cursive; font-size: 0.85em; z-index: 9999;';
-                        document.body.appendChild(tempMsg);
-                        setTimeout(() => tempMsg.remove(), 1500);
+                        clipNotification.textContent = 'Copied to clipboard! ✨';
+                        clipNotification.classList.add('show');
+                        setTimeout(() => {
+                            clipNotification.classList.remove('show');
+                        }, 2000);
                     });
                 });
             });
