@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Saving the updated clips array back to storage
-            chrome.storage.sync.set({ clips: clips }, function() {
+            chrome.storage.local.set({ clips: clips }, function() {
                 alert('Text saved! 📋');
                 textArea.value = ''; //clear text box
             });
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // STEP 9: Clear all clips button
             document.getElementById('clearAll').addEventListener('click', function() {
                 if (confirm('Are you sure you want to delete all saved clips?')) {
-                    chrome.storage.sync.set({ clips: [] }, function() {
+                    chrome.storage.local.set({ clips: [] }, function() {
                         location.reload();
                     });
                 }
