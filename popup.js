@@ -175,8 +175,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Focus on textarea
                     document.getElementById('editTextarea').focus();
                     
+                    // Cancel button - close edit pop up
+                    document.getElementById('cancelEdit').addEventListener('click', function() {
+                        modal.remove();
+                    });
                     
-                    // Save button
+                    // Close pop up / modal when clicking outside
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === modal) {
+                            modal.remove();
+                        }
+                    });
+
+                    // Save Edited Text button
                     document.getElementById('saveEdit').addEventListener('click', function() {
                         const newText = document.getElementById('editTextarea').value;
                         if (newText.trim() !== '') {
