@@ -14,7 +14,5 @@ Took some time to buidl the UI mockup. But in terms of functionality i did forge
 
 #### 🛠 Tech Stack
  • HTML  • CSS • JavaScript •
- • Hosting: GitHub Pages/Vercel (i'm still deciding) You can heck it out or use this link: 
-(unfortunately, this project is not yet deployed 😔)
-Butttt, i've completed the figma prototype, and you can view it here: https://www.figma.com/proto/IVfHqAGqUotJ8egNUrmqeu/Clippey?page-id=0%3A1&node-id=1-121&p=f&viewport=712%2C100%2C0.16&t=02vOky5ss0IzGZ7H-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A121
+ • Hosting: GitHub Pages/Vercel (i'm still deciding) You can heck it out or use this link: https://chromewebstore.google.com/detail/ahjnaiafahdgcpmkmkinemhfobllloii?utm_source=item-share-cb
 
